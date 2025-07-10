@@ -38,6 +38,21 @@ export default function Home() {
 
         {/* Instructions */}
         <InstructionsSection />
+
+        {/* Footer Attribution */}
+        <div className="mt-8 text-center">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full shadow-lg border border-white/20">
+            <span className="text-sm text-slate-600">Built with ❤️ by</span>
+            <a
+              href="https://shamoilarsi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-200 hover:underline"
+            >
+              Shamoil Arsiwala
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
