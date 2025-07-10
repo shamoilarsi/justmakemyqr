@@ -207,6 +207,39 @@ export default function QRCustomizationPanel({
           </div>
         </div>
 
+        {/* Export Options */}
+        <div className="space-y-6 p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+          <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg"></div>
+            PNG Export Options
+          </h3>
+
+          {/* Transparent Background */}
+          <div className="flex items-center gap-4 p-4 bg-white/60 rounded-xl border border-slate-200">
+            <div className="flex items-center gap-3">
+              <input
+                type="checkbox"
+                id="transparentBackground"
+                checked={qrOptions.transparentBackground}
+                onChange={(e) =>
+                  onOptionChange("transparentBackground", e.target.checked)
+                }
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-slate-300 rounded focus:ring-purple-500 focus:ring-2"
+              />
+              <label
+                htmlFor="transparentBackground"
+                className="text-sm font-medium cursor-pointer text-slate-700"
+              >
+                🌟 Transparent Background
+              </label>
+            </div>
+          </div>
+          <p className="text-xs text-slate-500 italic">
+            Your QR code will be exported as a PNG image with optional
+            transparent background.
+          </p>
+        </div>
+
         {/* Logo Settings */}
         <LogoSettings
           qrOptions={qrOptions}

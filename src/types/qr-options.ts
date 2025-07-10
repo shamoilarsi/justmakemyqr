@@ -16,4 +16,5 @@ export interface QROptions {
   logoPaddingStyle: 'square' | 'circle';
   quietZone: number;
   removeQrCodeBehindLogo: boolean;
+  transparentBackground: boolean;
 } 

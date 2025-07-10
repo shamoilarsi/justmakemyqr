@@ -18,11 +18,30 @@ export default function QRPreviewPanel({
           Preview
         </h2>
 
-        <div className="inline-block p-6 bg-white rounded-2xl shadow-lg border-2 border-slate-100 mb-8 transition-transform hover:scale-105 duration-300">
+        <div
+          className={`inline-block p-6 rounded-2xl shadow-lg border-2 mb-8 transition-transform hover:scale-105 duration-300 ${
+            qrOptions.transparentBackground
+              ? "bg-transparent border-slate-300"
+              : "bg-white border-slate-100"
+          }`}
+          style={
+            qrOptions.transparentBackground
+              ? {
+                  background:
+                    "repeating-conic-gradient(#f1f5f9 0% 25%, #e2e8f0 25% 50%) 50% / 20px 20px",
+                }
+              : {}
+          }
+        >
           <QRCode
+            id="styled-qr-code"
             value={qrOptions.value}
             size={qrOptions.size}
-            bgColor={qrOptions.bgColor}
+            bgColor={
+              qrOptions.transparentBackground
+                ? "transparent"
+                : qrOptions.bgColor
+            }
             fgColor={qrOptions.fgColor}
             logoImage={qrOptions.logoImage || undefined}
             logoWidth={qrOptions.logoWidth}
@@ -44,7 +63,8 @@ export default function QRPreviewPanel({
           onClick={onDownload}
           className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-500/50 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
-          📥 Download QR Code
+          📥 Download as PNG
+          {qrOptions.transparentBackground && " (Transparent)"}
         </button>
 
         <div className="mt-8 p-6 bg-slate-50 rounded-xl border border-slate-200 text-left">
@@ -74,6 +94,12 @@ export default function QRPreviewPanel({
               <span className="font-medium">Quiet Zone:</span>
               <span className="text-blue-600 font-mono">
                 {qrOptions.quietZone}px
+              </span>
+            </div>
+            <div className="flex justify-between">
+              <span className="font-medium">Export Format:</span>
+              <span className="text-blue-600 font-mono uppercase">
+                PNG{qrOptions.transparentBackground && " (Transparent)"}
               </span>
             </div>
             {qrOptions.logoImage && (
