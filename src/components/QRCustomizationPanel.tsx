@@ -211,7 +211,7 @@ export default function QRCustomizationPanel({
         <div className="space-y-6 p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
           <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
             <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg"></div>
-            PNG Export Options
+            Export Options
           </h3>
 
           {/* Transparent Background */}

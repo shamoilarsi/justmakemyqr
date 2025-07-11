@@ -157,6 +157,10 @@ export default function LogoSettings({
               className="text-sm font-medium text-slate-600 cursor-pointer"
             >
               🎭 Remove QR code behind logo
+              <br />
+              <span className="text-xs text-slate-500 italic">
+                (Will not work if transparent background is enabled)
+              </span>
             </label>
           </div>
         </div>
