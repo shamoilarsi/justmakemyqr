@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { QROptions } from '@/types/qr-options';
 
 const DEFAULT_QR_OPTIONS: QROptions = {
-  value: 'https://example.com',
+  value: '',
   size: 256,
   bgColor: '#FFFFFF',
   fgColor: '#000000',

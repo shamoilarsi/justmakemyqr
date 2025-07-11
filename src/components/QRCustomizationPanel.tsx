@@ -33,7 +33,7 @@ export default function QRCustomizationPanel({
             value={qrOptions.value}
             onChange={(e) => onOptionChange("value", e.target.value)}
             className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 text-slate-700 placeholder-slate-400"
-            placeholder="Enter URL, text, or any data to encode"
+            placeholder="https://arcie.art/"
           />
         </div>
 
@@ -189,7 +189,7 @@ export default function QRCustomizationPanel({
         </div>
 
         {/* Enable CORS */}
-        <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
+        {/* <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
           <div className="flex items-center gap-3">
             <input
               type="checkbox"
@@ -205,7 +205,7 @@ export default function QRCustomizationPanel({
               🌐 Enable CORS for external images
             </label>
           </div>
-        </div>
+        </div> */}
 
         {/* Export Options */}
         <div className="space-y-6 p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
